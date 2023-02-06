@@ -5,8 +5,27 @@ const Search = (props) => {
   let { setSearchedMovie } = props;
   const [searchString, setSearchString] = useState("");
 
+  const getRandomIntInclusive = (min, max) => {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1) + min);
+  };
+
   useEffect(() => {
-    makeServerCall("Pacific Rim");
+    const moviesArray = [
+      "The Departed",
+      "Good Will Hunting",
+      "Inception",
+      "Interstellar",
+      "The Dark Knight Rises",
+      "The Dark Knight",
+      "The Sting",
+      "La Grande Vadrouille",
+      "Lost In Translation",
+      "Notting Hill",
+    ];
+    let chosenMovie = getRandomIntInclusive(0, 9);
+    makeServerCall(moviesArray[chosenMovie]);
   }, []);
 
   const handleChange = (e) => {
