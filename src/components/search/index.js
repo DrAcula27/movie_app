@@ -1,31 +1,29 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 
 const Search = (props) => {
   let { setSearchedMovie } = props;
   const [searchString, setSearchString] = useState("");
 
-  const getRandomIntInclusive = (min, max) => {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min + 1) + min);
-  };
+  let isFirstRender = useRef(true);
 
   useEffect(() => {
-    const moviesArray = [
-      "The Departed",
-      "Good Will Hunting",
-      "Inception",
-      "Interstellar",
-      "The Dark Knight Rises",
-      "The Dark Knight",
-      "The Sting",
-      "La Grande Vadrouille",
-      "Lost In Translation",
-      "Notting Hill",
+    const movieNames = [
+      "Pulp Fiction",
+      "Reservoir Dogs",
+      "Django Unchained",
+      "Kill Bill: Vol. 2",
+      "Inglourious Basterds",
+      "Kill Bill: Vol. 1",
+      "Death Proof",
+      "Jackie Brown",
+      "Life of Brian",
+      "Monty Python and The Holy Grail",
     ];
-    let chosenMovie = getRandomIntInclusive(0, 9);
-    makeServerCall(moviesArray[chosenMovie]);
+    if (isFirstRender.current === true) {
+      isFirstRender.current = false;
+      makeServerCall(movieNames[Math.floor(Math.random() * movieNames.length)]);
+    }
   }, []);
 
   const handleChange = (e) => {

@@ -1,7 +1,7 @@
 import React from "react";
 
 const DisplayMovie = (props) => {
-  let { searchedMovie } = props;
+  let { searchedMovie, movieArray, setMovieArray } = props;
 
   const returnMovieJSX = () => {
     if (searchedMovie !== null) {
@@ -23,7 +23,22 @@ const DisplayMovie = (props) => {
     }
   };
 
-  return <section>{returnMovieJSX()}</section>;
+  const handleClick = () => {
+    setMovieArray([...movieArray, searchedMovie.Title]);
+  };
+
+  return (
+    <section
+      style={{
+        borderBottom: "4px solid black",
+        marginBottom: "20px",
+        paddingBottom: "12px",
+      }}
+      onClick={() => handleClick()}
+    >
+      {returnMovieJSX()}
+    </section>
+  );
 };
 
 export default DisplayMovie;
