@@ -1,11 +1,9 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-const Search = () => {
+const Search = (props) => {
+  let { setSearchedMovie } = props;
   const [searchString, setSearchString] = useState("");
-  const [searchedMovie, setSearchedMovie] = useState(null);
-
-  console.log(searchedMovie);
 
   const handleChange = (e) => {
     let newValue = e.target.value;
@@ -15,14 +13,10 @@ const Search = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    console.log("submitting");
-
     let serverResponse = await axios({
       method: "GET",
       url: `http://localhost:5000/get_movie/${searchString}`,
     });
-
-    console.log(serverResponse);
     setSearchedMovie(serverResponse.data);
   };
 
