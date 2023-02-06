@@ -1,24 +1,31 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 const Search = (props) => {
   let { setSearchedMovie } = props;
   const [searchString, setSearchString] = useState("");
 
+  useEffect(() => {
+    makeServerCall("Pacific Rim");
+  }, []);
+
   const handleChange = (e) => {
     let newValue = e.target.value;
     setSearchString(newValue);
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
+  const makeServerCall = async (string) => {
     let serverResponse = await axios({
       method: "GET",
-      url: `http://localhost:5000/get_movie/${searchString}`,
+      url: `http://localhost:5000/get_movie/${string}`,
     });
     setSearchedMovie(serverResponse.data);
     setSearchString("");
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    makeServerCall(searchString);
   };
 
   return (
