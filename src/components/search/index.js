@@ -18,6 +18,7 @@ const Search = (props) => {
       url: `http://localhost:5000/get_movie/${searchString}`,
     });
     setSearchedMovie(serverResponse.data);
+    setSearchString("");
   };
 
   return (
