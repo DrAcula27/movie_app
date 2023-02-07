@@ -24,7 +24,9 @@ const DisplayMovie = (props) => {
       return (
         <div>
           <h3>Movie Information</h3>
-          <p>Please search for a movie to see it displayed here.</p>
+          <p>
+            Please search for a movie to see its information displayed here.
+          </p>
         </div>
       );
     }

@@ -6,8 +6,7 @@ const MovieRatings = (props) => {
   const returnLoader = () => {
     return (
       <div>
-        <h3>Movie Ratings</h3>
-        <p>Please search for a movie to see it's ratings displayed here.</p>
+        <p>Please search for a movie to see its ratings displayed here.</p>
       </div>
     );
   };
