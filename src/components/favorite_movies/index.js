@@ -1,9 +1,10 @@
 import React from "react";
 
 const FavoriteMovies = (props) => {
-  let { movieArray } = props;
-  let arrayJSX = movieArray.map((title, titleIndex) => {
-    return <li key={titleIndex}>{title}</li>;
+  let { movieArray, searchedMovie } = props;
+
+  let arrayJSX = movieArray.map((title) => {
+    return <li key={searchedMovie.imdbID}>{title}</li>;
   });
 
   return (
