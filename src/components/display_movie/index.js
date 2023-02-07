@@ -31,7 +31,9 @@ const DisplayMovie = (props) => {
   };
 
   const handleClick = () => {
-    setMovieArray([...movieArray, searchedMovie.Title]);
+    if (!movieArray.includes(searchedMovie.Title)) {
+      setMovieArray([...movieArray, searchedMovie.Title]);
+    }
   };
 
   return (
