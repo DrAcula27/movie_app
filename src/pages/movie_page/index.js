@@ -3,6 +3,7 @@ import Search from "../../components/search";
 import DisplayMovie from "../../components/display_movie";
 import FavoriteMovies from "../../components/favorite_movies";
 import Header from "../../components/header";
+import MovieRatings from "../../components/movie_ratings";
 
 const MoviePage = () => {
   const [searchedMovie, setSearchedMovie] = useState(null);
@@ -17,7 +18,7 @@ const MoviePage = () => {
         setMovieArray={setMovieArray}
         movieArray={movieArray}
       />
-      {/* add MovieRatings here */}
+      <MovieRatings searchedMovie={searchedMovie} />
       <FavoriteMovies movieArray={movieArray} />
     </div>
   );
