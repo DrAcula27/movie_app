@@ -34,7 +34,7 @@ const Search = (props) => {
   const makeServerCall = async (string) => {
     let serverResponse = await axios({
       method: "GET",
-      url: `http://localhost:5000/get_movie/${string}`,
+      url: `/get_movie/${string}`,
     });
     setSearchedMovie(serverResponse.data);
     setSearchString("");

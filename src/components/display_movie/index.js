@@ -7,7 +7,7 @@ const DisplayMovie = (props) => {
     if (searchedMovie !== null) {
       return (
         <div>
-          <h3>Movie Display</h3>
+          <h3>Movie Information</h3>
           <h4>{searchedMovie.Title}</h4>
           <p>{searchedMovie.Plot}</p>
           {searchedMovie.Poster.toLowerCase() === "n/a" ? (
@@ -23,7 +23,7 @@ const DisplayMovie = (props) => {
     } else {
       return (
         <div>
-          <h3>Movie Display</h3>
+          <h3>Movie Information</h3>
           <p>Please search for a movie to see it displayed here.</p>
         </div>
       );

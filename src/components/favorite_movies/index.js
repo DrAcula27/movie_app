@@ -13,7 +13,7 @@ const FavoriteMovies = (props) => {
         marginBottom: "50px",
       }}
     >
-      <h3>Favorite Movies</h3>
+      <h3>Your Favorite Movies</h3>
       <ul>{arrayJSX}</ul>
     </section>
   );

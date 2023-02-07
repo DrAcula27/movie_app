@@ -1,8 +1,11 @@
 const axios = require("axios");
 const express = require("express");
 require("dotenv").config();
+const path = require("path");
 
 const app = express();
+
+app.use(express.static(path.join(__dirname, "build")));
 
 app.get("/get_movie/:movieString", async (req, res) => {
   console.log(req.params.movieString);
