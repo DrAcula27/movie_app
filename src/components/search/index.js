@@ -7,6 +7,15 @@ const Search = (props) => {
 
   let isFirstRender = useRef(true);
 
+  const makeServerCall = async (string) => {
+    let serverResponse = await axios({
+      method: "GET",
+      url: `/get_movie/${string}`,
+    });
+    setSearchedMovie(serverResponse.data);
+    setSearchString("");
+  };
+
   useEffect(() => {
     const movieNames = [
       "Pulp Fiction",
@@ -20,24 +29,16 @@ const Search = (props) => {
       "Life of Brian",
       "Monty Python and The Holy Grail",
     ];
+
     if (isFirstRender.current === true) {
       isFirstRender.current = false;
       makeServerCall(movieNames[Math.floor(Math.random() * movieNames.length)]);
     }
-  }, []);
+  });
 
   const handleChange = (e) => {
     let newValue = e.target.value;
     setSearchString(newValue);
-  };
-
-  const makeServerCall = async (string) => {
-    let serverResponse = await axios({
-      method: "GET",
-      url: `/get_movie/${string}`,
-    });
-    setSearchedMovie(serverResponse.data);
-    setSearchString("");
   };
 
   const handleSubmit = async (e) => {
