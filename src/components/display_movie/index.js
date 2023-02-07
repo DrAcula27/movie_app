@@ -10,14 +10,18 @@ const DisplayMovie = (props) => {
           <h3>Movie Display</h3>
           <h4>{searchedMovie.Title}</h4>
           <p>{searchedMovie.Plot}</p>
-          <img src={searchedMovie.Poster} alt="Movie Poster" />
+          {searchedMovie.Poster.toLowerCase() === "n/a" ? (
+            <div>show default image</div>
+          ) : (
+            <img src={searchedMovie.Poster} alt="Movie Poster" />
+          )}
         </div>
       );
     } else {
       return (
         <div>
           <h3>Movie Display</h3>
-          <p>Please search for a movie.</p>
+          <p>Please search for a movie to see it displayed here.</p>
         </div>
       );
     }
