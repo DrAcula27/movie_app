@@ -11,7 +11,10 @@ const DisplayMovie = (props) => {
           <h4>{searchedMovie.Title}</h4>
           <p>{searchedMovie.Plot}</p>
           {searchedMovie.Poster.toLowerCase() === "n/a" ? (
-            <div>show default image</div>
+            <img
+              src="https://via.placeholder.com/500x90/ccc/000?text=Movie+Poster+Not+Available"
+              alt="Movie Poster Placeholder"
+            />
           ) : (
             <img src={searchedMovie.Poster} alt="Movie Poster" />
           )}
