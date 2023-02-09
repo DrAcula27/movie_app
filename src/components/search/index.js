@@ -16,24 +16,25 @@ const Search = (props) => {
     setSearchString("");
   };
 
-  useEffect(() => {
-    const movieNames = [
-      "Pulp Fiction",
-      "Reservoir Dogs",
-      "Django Unchained",
-      "Kill Bill: Vol. 2",
-      "Inglourious Basterds",
-      "Kill Bill: Vol. 1",
-      "Death Proof",
-      "Jackie Brown",
-      "Life of Brian",
-      "Monty Python and The Holy Grail",
-    ];
+  const movieNames = [
+    "Pulp Fiction",
+    "Reservoir Dogs",
+    "Django Unchained",
+    "Kill Bill: Vol. 2",
+    "Inglourious Basterds",
+    "Kill Bill: Vol. 1",
+    "Death Proof",
+    "Jackie Brown",
+    "Life of Brian",
+    "Monty Python and The Holy Grail",
+  ];
 
+  useEffect(() => {
     if (isFirstRender.current === true) {
       isFirstRender.current = false;
       makeServerCall(movieNames[Math.floor(Math.random() * movieNames.length)]);
     }
+    // eslint-disable-next-line
   }, []);
 
   const handleChange = (e) => {

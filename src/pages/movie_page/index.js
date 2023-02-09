@@ -19,7 +19,7 @@ const MoviePage = () => {
         movieArray={movieArray}
       />
       <MovieRatings searchedMovie={searchedMovie} />
-      <FavoriteMovies searchedMovie={searchedMovie} movieArray={movieArray} />
+      <FavoriteMovies movieArray={movieArray} />
     </div>
   );
 };
