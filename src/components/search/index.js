@@ -34,7 +34,7 @@ const Search = (props) => {
       isFirstRender.current = false;
       makeServerCall(movieNames[Math.floor(Math.random() * movieNames.length)]);
     }
-  });
+  }, []);
 
   const handleChange = (e) => {
     let newValue = e.target.value;
