@@ -15,7 +15,7 @@
 
 ## Demo
 
-![OMDB Movie Search Demo](https://movie-app-0d62.onrender.com/)
+[OMDB Movie Search Demo](https://movie-app-0d62.onrender.com/)
 
 ## Author
 
