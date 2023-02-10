@@ -1,12 +1,44 @@
-# Getting Started with Create React App
+<h1 align="center">Welcome to movie_app!</h1>
+<p>
+  <img src="https://img.shields.io/badge/npm-%3E%3D9.1.2-blue.svg" />
+  <img src="https://img.shields.io/badge/node-%3E%3D18.12.1-blue.svg" />
+  <a href="#" target="_blank">
+    <img alt="License: ISC" src="https://img.shields.io/github/license/DrAcula27/movie_app" />
+  </a>
+</p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+> Per Scholas - Week 10 - React - Assignment: Movie Search and Display
+
+> This is another `React` assignment through my Software Engineering course at Per Scholas. This app uses an Express server to request movie data from the OMDB API when the user enters a search term in the search bar. The search will return the first matching movie. The user can add a movie to a Favorites list by clicking on the movie. The app is hosted (for free, so it may be slow) on [render](render.com).
+
+**This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).**
+
+## Demo
+
+![OMDB Movie Search Demo](https://movie-app-0d62.onrender.com/)
+
+## Author
+
+👤 **Danielle Andrews**
+
+- Github: [@DrAcula27](https://github.com/DrAcula27)
+- LinkedIn: [@daniellerandrews](https://linkedin.com/in/daniellerandrews)
 
 ## Available Scripts
 
-In the project directory, you can run:
+If you clone this project, you can run the following:
 
-### `npm start`
+### In the project directory, you can run:
+
+#### `npm run dev`
+
+Runs the app in development mode.\
+Starts the frontend on port 3000.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Starts the backend on port 5000.\
+Open [http://localhost:5000](http://localhost:5000) to view it in your browser.
+
+#### `npm start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
@@ -14,12 +46,12 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-### `npm test`
+#### `npm test`
 
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+#### `npm run build`
 
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
@@ -29,7 +61,7 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+#### `npm run eject`
 
 **Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
@@ -68,3 +100,15 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+## Future Work
+
+- Improve CSS.
+- Add button to remove a movie from favorites.
+- Return multiple matching movies for a more generic search term.
+  - For example: "The Matrix" would display all Matrix movies.
+- Implement search hints.
+
+## Show Your Support
+
+Give a ⭐️ if you liked this project!
